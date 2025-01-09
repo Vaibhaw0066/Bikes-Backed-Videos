@@ -88,7 +88,7 @@ def process_video(model_id):
             # Step 4: Poll the job status until it's finished
             job_status_url = f'https://mango.sievedata.com/v2/jobs/{job_id}'
             for _ in range(100):
-                time.sleep(4)
+                time.sleep(2)
                 job_status_response = requests.get(job_status_url, headers={
                     'Content-Type': 'application/json',
                     'X-API-Key': f'{API_KEY}'
@@ -105,7 +105,7 @@ def process_video(model_id):
 
                             for category in categories:
                                 category_id = category["id"]
-                                print(f"categorieID :  Model ID {category_id}")
+                                print(f"categorieID : {category_id}")
                                 # time_data = [{"startTime": category['startTime'], "endTime": category['endTime']}]
                                 time_data = [{"startTime": "00:00:01", "endTime": "00:00:10"}]
 
