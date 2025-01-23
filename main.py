@@ -8,15 +8,16 @@ import  logging
 
 logger = getLogger()
 
-API_KEY = "v0-V9b0iPNXZPhY8K9zDQh4ufL73uSz9sx3MWdnjR4w"
+API_KEY = "7xegPNale11hXTWCiegfKh0RPWnY1an1VulBFC7-yHU"
 
 TOKEN_DEV = "eyJhbGciOiJSUzI1NiIsImtpZCI6IlNLMmNjOWZ4NnBMRXRXTGxGV3pQVVZrRGFiRDFKIiwidHlwIjoiSldUIn0.eyJhbXIiOlsib2F1dGgiXSwiZHJuIjoiRFMiLCJlbWFpbCI6Imt1bWFyLnZhaWJoYXdAY2FyczI0LmNvbSIsImV4cCI6MTczNjc0ODc1NSwiaWF0IjoxNzM1ODg0NzU1LCJpc3MiOiJQMmNjOWZ2VnBYeWNjZDNxN1ZnSkJNNGdJYmFCIiwibmFtZSI6Ikt1bWFyIFZhaWJoYXciLCJyZXhwIjoiMjAyNS0wMS0zMVQwNjoxMjozNVoiLCJzdWIiOiJVMnE5dFR5UVZiUHNiOGUyWWdVdnhZcEE0UDhNIiwidGVuYW50cyI6eyJlZjc1MzRkZS05MzFlLTRjNjgtOTMyZS02MjZkYTEwOTJmMjkiOnsicGVybWlzc2lvbnMiOltdLCJyb2xlcyI6WyJQVUJMSVNIRVIiXX19fQ.D9kpARpKwOqlBSAzXescLWfIRAFbLGxDPXuI6Accx0MLFwpamxxP0Md5xlcDdxNftu4y8WTX9dheJD7lbAh4cS70THYVX7Eq-Ae1rPm5SzFSnl84iO31dGb6E87OjkdmmstR0XEkiuWp1M-uQudfu1WGYMM3Sx7ayAlRd9KW2DlTE7-LycSTVs2A1XAd1N-Qm8iRFqQwLBgX9xQCO0kEDfmhghQSIwGRXD9zpA2NWQ2Pxp9YAzpwZDssqndLTE_Yt0cwetJ98Z7rKLSLKpEMVSaE8nnYQuG8vU54IBY5hOsHq1qYf5FmXU6_MFomKVVZCkqF6UN2faX8NMDPPjaNsQ"
 DEV = "https://cms-bike-backend.qac24svc.dev"
 
 
-TOKEN_PROD = "eyJhbGciOiJSUzI1NiIsImtpZCI6IlNLMmNzd3RwQTFobFlTSzMyUDU2c1U4b1lGQ1AzIiwidHlwIjoiSldUIn0.eyJhbXIiOlsib2F1dGgiXSwiZHJuIjoiRFMiLCJlbWFpbCI6Im1vaGQuYW1hYW4xQGNhcnMyNC5jb20iLCJleHAiOjE3Mzc0NDc0NDYsImlhdCI6MTczNjU4MzQ0NiwiaXNzIjoiUDJjc3d0Zm05Z0lmc0xTWkxKZlI2SXlTNTREeCIsIm5hbWUiOiJNb2hkIEFtYWFuIiwicmV4cCI6IjIwMjUtMDItMDhUMDg6MTc6MjZaIiwic3ViIjoiVTJkRThoOFdpZ1RreGl4WDdkT1c5aTMzSVZGMSIsInRlbmFudHMiOnsiMTUzMmJmYTEtZTNkOC00MmRiLTg5ODctNWFlNWJiNDc5ZGY4Ijp7InBlcm1pc3Npb25zIjpbXSwicm9sZXMiOlsiUFVCTElTSEVSIl19LCI1ZmEzMjRhYi1mODkzLTRkZDItYjZhZS1kODYwNmQ1N2U2YjUiOnsicGVybWlzc2lvbnMiOltdLCJyb2xlcyI6WyJQVUJMSVNIRVIiXX0sIjZiYTdiODEwLTlkYWQtMTFkMS04MGI0LTAwYzA0ZmQ0MzBjOCI6eyJwZXJtaXNzaW9ucyI6W10sInJvbGVzIjpbIlBVQkxJU0hFUiJdfSwiOGM2NGQ5NjYtN2QwNy00NTJjLTg2NTMtY2IzZWIwNGNhNDVhIjp7InBlcm1pc3Npb25zIjpbXSwicm9sZXMiOlsiUFVCTElTSEVSIl19LCI5YzU1YzZiOC1lZTFjLTRhN2YtYThiNC0zYzQxZDRlNGY2NTciOnsicGVybWlzc2lvbnMiOltdLCJyb2xlcyI6WyJQVUJMSVNIRVIiXX0sImJiZTNiZjU1LTMwYjUtNDU5Zi05M2IxLTNjYzU4NzFkYTkyNiI6eyJwZXJtaXNzaW9ucyI6W10sInJvbGVzIjpbIlBVQkxJU0hFUiJdfSwiZTY0ZWM3YTUtNjc0My00OWVhLTk3ZjMtM2MzN2VkOTAyNWJmIjp7InBlcm1pc3Npb25zIjpbXSwicm9sZXMiOlsiUFVCTElTSEVSIl19LCJlZjc1MzRkZS05MzFlLTRjNjgtOTMyZS02MjZkYTEwOTJmMjkiOnsicGVybWlzc2lvbnMiOltdLCJyb2xlcyI6WyJQVUJMSVNIRVIiXX19fQ.bpj-ia5Vzxa4DGwrODY-yKpsCsEQZ-Gfz-qk8haoa63MW49sdd-Z0kbYpjNcs6zaW1l6qiSh5kw8IN_uKHvg1Eu1GHhAm4Q9Y-femZqdt0ltWQb2g6fjbjJBn5do_Qv881usDPPfj_zajLo05Rwij-xE0dUjE34MqSl7eBUCmCgMlwQel5FgHl4_eiCRUfg3hw3rz0L7EoKqzwu9Cuy0oJfXC4BzFkhLuTrZ5-Gdb1QYC1DmwuLzDKBSVN8h4xL-7aEzn4Ncz9KYL6lMOf8GgBKO4QEyF6w6wuhyFrPam8Ts42yRdRGfu3jaaSzHdiv5_d3bAURF-omKSSwouYI_4g"
+TOKEN_PROD = "eyJhbGciOiJSUzI1NiIsImtpZCI6IlNLMmNzd3RwQTFobFlTSzMyUDU2c1U4b1lGQ1AzIiwidHlwIjoiSldUIn0.eyJhbXIiOlsib2F1dGgiXSwiZHJuIjoiRFMiLCJlbWFpbCI6Im1vaGQuYW1hYW4xQGNhcnMyNC5jb20iLCJleHAiOjE3MzgzMTUwODYsImlhdCI6MTczNzQ1MTA4NiwiaXNzIjoiUDJjc3d0Zm05Z0lmc0xTWkxKZlI2SXlTNTREeCIsIm5hbWUiOiJNb2hkIEFtYWFuIiwicmV4cCI6IjIwMjUtMDItMThUMDk6MTg6MDZaIiwic3ViIjoiVTJkRThoOFdpZ1RreGl4WDdkT1c5aTMzSVZGMSIsInRlbmFudHMiOnsiMTUzMmJmYTEtZTNkOC00MmRiLTg5ODctNWFlNWJiNDc5ZGY4Ijp7InBlcm1pc3Npb25zIjpbXSwicm9sZXMiOlsiUFVCTElTSEVSIl19LCI1ZmEzMjRhYi1mODkzLTRkZDItYjZhZS1kODYwNmQ1N2U2YjUiOnsicGVybWlzc2lvbnMiOltdLCJyb2xlcyI6WyJQVUJMSVNIRVIiXX0sIjZiYTdiODEwLTlkYWQtMTFkMS04MGI0LTAwYzA0ZmQ0MzBjOCI6eyJwZXJtaXNzaW9ucyI6W10sInJvbGVzIjpbIlBVQkxJU0hFUiJdfSwiOGM2NGQ5NjYtN2QwNy00NTJjLTg2NTMtY2IzZWIwNGNhNDVhIjp7InBlcm1pc3Npb25zIjpbXSwicm9sZXMiOlsiUFVCTElTSEVSIl19LCI5YzU1YzZiOC1lZTFjLTRhN2YtYThiNC0zYzQxZDRlNGY2NTciOnsicGVybWlzc2lvbnMiOltdLCJyb2xlcyI6WyJQVUJMSVNIRVIiXX0sImJiZTNiZjU1LTMwYjUtNDU5Zi05M2IxLTNjYzU4NzFkYTkyNiI6eyJwZXJtaXNzaW9ucyI6W10sInJvbGVzIjpbIlBVQkxJU0hFUiJdfSwiZTY0ZWM3YTUtNjc0My00OWVhLTk3ZjMtM2MzN2VkOTAyNWJmIjp7InBlcm1pc3Npb25zIjpbXSwicm9sZXMiOlsiUFVCTElTSEVSIl19LCJlZjc1MzRkZS05MzFlLTRjNjgtOTMyZS02MjZkYTEwOTJmMjkiOnsicGVybWlzc2lvbnMiOltdLCJyb2xlcyI6WyJQVUJMSVNIRVIiXX19fQ.LsbptD03_DBbNri4t9Bny78ZJHS5ibize3L3dXFOYGPLBDLKPw6EPfO1sPa8WKTaKA_LBxz-bbn3_w5pc-jg5d0Hq4PPHqUn8a23SbOK2s_vjiBBU74cPIvSXLILOtpkcl5A6wtovZ4ttzrsPLlBlbpBk3jKe2x48kNguFW3r35eWEi_SSSu5EdmPWc9lFYSH64TrK98GLXxF06h2O6GhhLayZBg11iYfqTcozITRQZ6iSFj9nIUS28WAUc4-gy5LQeLlq3hb2e79edan8dD857rXUzo8r7Tf47Whh8U6xJc2eCXfM_KxK9FiqjlgbPGUo_UySiPQhGY1Q-4v8hvTg"
 PROD = "https://cms-bike-backend-prod.cars24.team"
 
+model_video_id_long_time_taking = [365,829,1025,599,960,1081,258,260]
 model_video_ids = [
     1,
     101,
@@ -1140,8 +1141,8 @@ model_video_ids = [
     675,
     676,
     677
-]
-
+][::-1]
+print(len(model_video_ids))
 
 # File to store the processed model IDs
 response_file = 'response.json'
@@ -1172,7 +1173,7 @@ def save_processed_ids():
 
 # Function to process a model video ID
 def process_video(model_id):
-    logger.log(logging.INFO,"Started processing video")
+    logger.log(logging.INFO,"Started processing video : "+str(model_id))
     # Step 2: Fetch model video data from the API
     url = f'{PROD}/api/v1/model-video/{model_id}'
     headers = {
@@ -1218,8 +1219,8 @@ def process_video(model_id):
 
             # Step 4: Poll the job status until it's finished
             job_status_url = f'https://mango.sievedata.com/v2/jobs/{job_id}'
-            for _ in range(100):
-                time.sleep(2)
+            for _ in range(1000):
+                time.sleep(3)
                 job_status_response = requests.get(job_status_url, headers={
                     'Content-Type': 'application/json',
                     'X-API-Key': f'{API_KEY}'
@@ -1318,7 +1319,7 @@ def process_video(model_id):
 
 # Step 1: Process each model video ID that hasn't been processed yet
 for model_id in model_video_ids:
-    if int(model_id) not in processed_ids :
+    if int(model_id) not in processed_ids  and int(model_id) not in model_video_id_long_time_taking:
         s_t =  time.time()
         print(f"Processing for Model ID {model_id}")
         process_video(model_id)
