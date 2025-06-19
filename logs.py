@@ -26,11 +26,10 @@ def getLogger():
 
 
     # Create a file handler to write logs to a file
-    file_handler = logging.FileHandler('app.log')
+    file_handler = logging.FileHandler('multithreaded_model_video_june_11_2025.log')
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(formatter)
 
-    logger.log(logging.INFO,"Testing3")
 
 
     # Create a stream handler to print logs to the console
